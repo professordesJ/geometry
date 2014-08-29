@@ -1,3 +1,5 @@
+from numbers import *
+from math import *
 
 
 def equilateral_triangle_area(side):
@@ -68,7 +70,7 @@ def tetrahedron_area(side):
 
 def ellipsoid_volume(axis1,axis2,axis3):
     """
-    'ellipsoid_voulme' calculates an ellipsoid's surface volume given the axes:
+    'ellipsoid_voulme' calculates an ellipsoid's volume given the axes:
     >>> ellipsoid_volume(1,2,3)
     12
     :param axis1,axis2,axis3: the axes lengths
@@ -77,23 +79,80 @@ def ellipsoid_volume(axis1,axis2,axis3):
     return 4*pi*axis1*axis2*axis3/3
 
 
+def hypercube_d_volume(side : Number,dimension : Number) -> Number:
+    """
+    'hypercube_d_volume' calculates a hypercube's  volume given the side length and dimension d:
+    >>> hypercube_d_volume(2,3)
+    8
+    :param axis1,axis2,axis3: the axes lengths
+    :return: the volume
+    """
+    return side**dimension
+
+
+def simplex_d_volume(side : Number,dimension : Number) -> Number:
+    """
+    'simplex_d_volume' calculates a hyupercube's  volume given the side length and dimension d:
+    >>> hypercube_d_volume(2,3)
+    8
+    :param axis1,axis2,axis3: the axes lengths
+    :return: the volume
+    """
+    return ((dimension+1)**(1/2))*side**dimension/(2**(dimension/2)*factorial(dimension))
+
+def triangle_area_heron(sidea,sideb,sidec ):
+    """
+    'triangle_area_heron' calculates a triangles's  area given the side lengths:
+    >>> triangle_area_heron(2,3,4)
+    8
+    :param sidea,sideb,sidec: the side lengths
+    :return: the area
+    """
+    s = (sidea + sideb + sidec)/2
+
+    return (s*(s-sidea)*(s-sideb)*(s-sidec))**(1/2)
+
+
+def triangle_area_2sides_included_angle(sidea,sideb,anglec):
+    """
+    'triangle_area_2sides_included_angle' calculates a triangles's  area given two side lengths and included angle:
+    >>> triangle_area_2sides_included_angle(3,4,90)
+    6
+    :param sidea,sideb,sidec: the side lengths
+    :return: the area
+    """
+
+    return (sidea*sideb*sin(anglec)/2)
+
+
 if __name__ == "__main__":
     from numpy import *
-    sampleSide, sampleAxis1, sampleAxis2, sampleAxis3 = 4,1,2,3
+    sampleSide, sampleAxis1, sampleAxis2, sampleAxis3, sampleDimension,sampleSidea,sampleSideb,sampleSidec,sampleAnglec = 4,1,2,3,4,3,4,5,pi/2
     print(" sample side:",
           sampleSide,"\n",
           "sample axes:",
           sampleAxis1,sampleAxis2,sampleAxis3,"\n",
+          "sample dimension:",
+           sampleDimension,"\n",
           "equilateral triangle area:",
           equilateral_triangle_area(sampleSide),"\n",
           "cube volume:",
           cube_volume(sampleSide),"\n",
+           "simplex (d dim) volume:",
+          simplex_d_volume(sampleSide,sampleDimension),"\n",
+           "hypercube (d dim) volume:",
+          hypercube_d_volume(sampleSide,sampleDimension),"\n",
           "regular pentagon area:",
           regular_pentagon_area(sampleSide),"\n",
           "tetrahedron_volume:",
           tetrahedron_volume(sampleSide),"\n"
           " ellipsoid volume:",
-          ellipsoid_volume(sampleAxis1,sampleAxis2,sampleAxis3)
+          ellipsoid_volume(sampleAxis1,sampleAxis2,sampleAxis3),"\n",
+           "triangle area (Heron):",
+          triangle_area_heron(sampleSidea,sampleSideb,sampleSidec),"\n",
+           "triangle area (2sides, 1 angle):",
+          triangle_area_2sides_included_angle(sampleSidea,sampleSideb,sampleAnglec)
+
     )
 
 
