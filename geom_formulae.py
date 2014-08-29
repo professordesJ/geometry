@@ -1,14 +1,4 @@
 
-def equilateral_triangle_perimeter(side):
-    """
-    'equilateral_triangle_perimeter' calculates an equilateral triangle's perimeter given a side length:
-    >>> equilateral_triangle_perimeter(4)
-    12
-    :param side: the side length
-    :return: the perimeter
-    """
-    return 3*side
-
 
 def equilateral_triangle_area(side):
     """
@@ -19,7 +9,6 @@ def equilateral_triangle_area(side):
     :return: the area
     """
     return 3**(1/2)*side/4
-
 
 
 def cube_volume(side):
@@ -90,25 +79,21 @@ def ellipsoid_volume(axis1,axis2,axis3):
 
 if __name__ == "__main__":
     from numpy import *
-    sampleSide, saxis1, saxis2, saxis3 = 4,1,2,3
+    sampleSide, sampleAxis1, sampleAxis2, sampleAxis3 = 4,1,2,3
     print(" sample side:",
           sampleSide,"\n",
-          "equilateral triangle perimeter:",
-          equilateral_triangle_perimeter(sampleSide),
-          "  equilateral triangle area:",
+          "sample axes:",
+          sampleAxis1,sampleAxis2,sampleAxis3,"\n",
+          "equilateral triangle area:",
           equilateral_triangle_area(sampleSide),"\n",
           "cube volume:",
           cube_volume(sampleSide),"\n",
-          "regular pentagon perimeter:",
-          regular_pentagon_perimeter(sampleSide),
-          " regular pentagon area:",
+          "regular pentagon area:",
           regular_pentagon_area(sampleSide),"\n",
           "tetrahedron_volume:",
-          tetrahedron_volume(sampleSide),
-          " tetrahedron area:",
-          tetrahedron_area(sampleSide),"\n",
+          tetrahedron_volume(sampleSide),"\n"
           "ellipsoid volume:",
-          ellipsoid_volume(saxis1,saxis2,saxis3)
+          ellipsoid_volume(sampleAxis1,sampleAxis2,sampleAxis3)
     )
 
 
