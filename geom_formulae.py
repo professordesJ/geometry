@@ -44,18 +44,52 @@ def equilateral_triangle_area(side):
     """
     return 3**(1/2)*side/4
 
+
+
+def cube_area(side):
+    """
+    'cube_area' calculates a cube's surface area given a side length:
+    >>> cube_area(4)
+    96
+
+    :param side: the side length
+    :return: the area
+    """
+    return 6*side*side
+
+
+def cube_volume(side):
+    """
+    'cube_volume' calculates a cube's voulme given a side length:
+    >>> cube_volume(4)
+    64
+
+    :param side: the side length
+    :return: the volume (units^3 from side)
+    """
+    return side*side*side
+
+
+
+
+
 if __name__ == "__main__":
     sampleSide = 4
-    print("sample side:",
-          sampleSide,
-          "  square area:",
+    print(" sample side:",
+          sampleSide,"\n",
+          "square area:",
           square_area(sampleSide),
-          "  square perimeter:",
-          square_perimeter(sampleSide),
-          "  equilateral triangle perimeter:",
+          "square perimeter:",
+          square_perimeter(sampleSide),"\n"
+          " equilateral triangle perimeter:",
           equilateral_triangle_perimeter(sampleSide),
           "  equilateral triangle area:",
-          equilateral_triangle_area(sampleSide)
+          equilateral_triangle_area(sampleSide),"\n",
+          "cube area:",
+          cube_area(sampleSide),
+          "  cube volume:",
+          cube_volume(sampleSide),
+
     )
 
 
