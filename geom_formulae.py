@@ -5,7 +5,7 @@ from math import *
 def equilateral_triangle_area(side):
     """
     'equilateral_triangle_area' calculates an equilateral triangle's area given a side length:
-    >>> equilateral_triangle_perimeter(4)
+    >>> equilateral_triangle_area(4)
     12
     :param side: the side length
     :return: the area
@@ -68,10 +68,11 @@ def tetrahedron_area(side):
     """
     return 3**(1/2)*side
 
-def ellipsoid_volume(axis1,axis2,axis3):
+
+def ellipsoid_volume(axis1, axis2, axis3):
     """
     'ellipsoid_voulme' calculates an ellipsoid's volume given the axes:
-    >>> ellipsoid_volume(1,2,3)
+    >>> ellipsoid_volume(1, 2, 3)
     12
     :param axis1,axis2,axis3: the axes lengths
     :return: the voulme
@@ -79,7 +80,7 @@ def ellipsoid_volume(axis1,axis2,axis3):
     return 4*pi*axis1*axis2*axis3/3
 
 
-def hypercube_d_volume(side : Number,dimension : Number) -> Number:
+def hypercube_d_volume(side, dimension):
     """
     'hypercube_d_volume' calculates a hypercube's  volume given the side length and dimension d:
     >>> hypercube_d_volume(2,3)
@@ -90,7 +91,7 @@ def hypercube_d_volume(side : Number,dimension : Number) -> Number:
     return side**dimension
 
 
-def simplex_d_volume(side : Number,dimension : Number) -> Number:
+def simplex_d_volume(side: Number, dimension: Number) -> Number:
     """
     'simplex_d_volume' calculates a hyupercube's  volume given the side length and dimension d:
     >>> hypercube_d_volume(2,3)
@@ -100,7 +101,7 @@ def simplex_d_volume(side : Number,dimension : Number) -> Number:
     """
     return ((dimension+1)**(1/2))*side**dimension/(2**(dimension/2)*factorial(dimension))
 
-def triangle_area_heron(sidea,sideb,sidec ):
+def triangle_area_heron(sidea, sideb, sidec):
     """
     'triangle_area_heron' calculates a triangles's  area given the side lengths:
     >>> triangle_area_heron(2,3,4)
