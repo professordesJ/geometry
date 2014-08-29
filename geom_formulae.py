@@ -124,6 +124,17 @@ def triangle_area_2sides_included_angle(sidea,sideb,anglec):
 
     return (sidea*sideb*sin(anglec)/2)
 
+def area_pizza_slice(radius,angle):
+    """
+    'triangle_area_2sides_included_angle' calculates a triangles's  area given two side lengths and included angle:
+    >>> area_pizza_slice(2,pi)
+    pi*2
+    :param sidea,sideb,sidec: the side lengths
+    :return: the area
+    """
+
+    return (radius**2*angle/2)
+
 
 if __name__ == "__main__":
     from numpy import *
@@ -151,7 +162,9 @@ if __name__ == "__main__":
            "triangle area (Heron):",
           triangle_area_heron(sampleSidea,sampleSideb,sampleSidec),"\n",
            "triangle area (2sides, 1 angle):",
-          triangle_area_2sides_included_angle(sampleSidea,sampleSideb,sampleAnglec)
+          triangle_area_2sides_included_angle(sampleSidea,sampleSideb,sampleAnglec),"\n",
+           "area of a pizza slice (given radius, angle):",
+          area_pizza_slice(sampleSidea,sampleAnglec)
 
     )
 
