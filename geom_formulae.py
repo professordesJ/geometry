@@ -22,7 +22,7 @@ def square_area(side):
     return side*side
 
 if __name__ == "__main__":
-    sampleSide = 4
+    sampleSide = 5
     print("area:",
           square_area(sampleSide),
           "perimeter:",
