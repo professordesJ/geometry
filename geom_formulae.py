@@ -1,4 +1,3 @@
-from numbers import *
 from math import *
 
 
@@ -127,16 +126,16 @@ def triangle_area_2sides_included_angle(sidea, sideb, anglec):
     return sidea*sideb*sin(anglec)/2
 
 
-def area_pizza_slice(radius, angle):
+def area_pizza_slice(radius, anglec):
     """
     'triangle_area_2sides_included_angle' calculates a triangles's  area given two side lengths and included angle:
     >>> area_pizza_slice(2, pi)
     pi**2
-    :param sidea,sideb,sidec: the side lengths
+    :param radius, anglec: the radius and angle
     :return: the area
     """
 
-    return radius**2*angle/2
+    return radius**2*anglec/2
 
 
 if __name__ == "__main__":
@@ -150,13 +149,13 @@ if __name__ == "__main__":
           "sample dimension:",
           sampleDimension, "\n",
           "equilateral triangle area:",
-          equilateral_triangle_area(sampleSide),"\n",
+          equilateral_triangle_area(sampleSide), "\n",
           "cube volume:",
           cube_volume(sampleSide), "\n",
           "simplex (d dim) volume:",
-          simplex_d_volume(sampleSide,sampleDimension), "\n",
+          simplex_d_volume(sampleSide, sampleDimension), "\n",
           "hypercube (d dim) volume:",
-          hypercube_d_volume(sampleSide,sampleDimension), "\n",
+          hypercube_d_volume(sampleSide, sampleDimension), "\n",
           "regular pentagon area:",
           regular_pentagon_area(sampleSide), "\n",
           "tetrahedron_volume:",
@@ -164,12 +163,8 @@ if __name__ == "__main__":
           " ellipsoid volume:",
           ellipsoid_volume(sampleAxis1, sampleAxis2, sampleAxis3), "\n",
           "triangle area (Heron):",
-          triangle_area_heron(sampleSidea,sampleSideb,sampleSidec), "\n",
+          triangle_area_heron(sampleSidea, sampleSideb, sampleSidec), "\n",
           "triangle area (2sides, 1 angle):",
-          triangle_area_2sides_included_angle(sampleSidea, sampleSideb, sampleAnglec),"\n",
+          triangle_area_2sides_included_angle(sampleSidea, sampleSideb, sampleAnglec), "\n",
           "area of a pizza slice (given radius, angle):",
           area_pizza_slice(sampleSidea, sampleAnglec))
-
-
-
-
