@@ -141,7 +141,7 @@ def area_pizza_slice(radius, anglec):
 if __name__ == "__main__":
     from numpy import *
     sampleSide, sampleAxis1, sampleAxis2, sampleAxis3,  \
-    sampleDimension, sampleSidea, sampleSideb, sampleSidec, sampleAnglec = 4, 1, 2, 3, 4, 3, 4, 5, pi/2
+     sampleDimension, sampleSidea, sampleSideb, sampleSidec, sampleAnglec = 4, 1, 2, 3, 4, 3, 4, 5, pi/2
     print(" sample side:",
           sampleSide, "\n",
           "sample axes:",
