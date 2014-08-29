@@ -92,7 +92,7 @@ if __name__ == "__main__":
           regular_pentagon_area(sampleSide),"\n",
           "tetrahedron_volume:",
           tetrahedron_volume(sampleSide),"\n"
-          "ellipsoid volume:",
+          " ellipsoid volume:",
           ellipsoid_volume(sampleAxis1,sampleAxis2,sampleAxis3)
     )
 
