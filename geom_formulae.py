@@ -91,7 +91,7 @@ def hypercube_d_volume(side, dimension):
     return side**dimension
 
 
-def simplex_d_volume(side: Number, dimension: Number) -> Number:
+def simplex_d_volume(side, dimension):
     """
     'simplex_d_volume' calculates a hyupercube's  volume given the side length and dimension d:
     >>> hypercube_d_volume(2,3)
@@ -101,10 +101,11 @@ def simplex_d_volume(side: Number, dimension: Number) -> Number:
     """
     return ((dimension+1)**(1/2))*side**dimension/(2**(dimension/2)*factorial(dimension))
 
+
 def triangle_area_heron(sidea, sideb, sidec):
     """
     'triangle_area_heron' calculates a triangles's  area given the side lengths:
-    >>> triangle_area_heron(2,3,4)
+    >>> triangle_area_heron(2, 3, 4)
     8
     :param sidea,sideb,sidec: the side lengths
     :return: the area
@@ -114,60 +115,60 @@ def triangle_area_heron(sidea, sideb, sidec):
     return (s*(s-sidea)*(s-sideb)*(s-sidec))**(1/2)
 
 
-def triangle_area_2sides_included_angle(sidea,sideb,anglec):
+def triangle_area_2sides_included_angle(sidea, sideb, anglec):
     """
     'triangle_area_2sides_included_angle' calculates a triangles's  area given two side lengths and included angle:
-    >>> triangle_area_2sides_included_angle(3,4,90)
+    >>> triangle_area_2sides_included_angle(3, 4, pi/2)
     6
     :param sidea,sideb,sidec: the side lengths
     :return: the area
     """
 
-    return (sidea*sideb*sin(anglec)/2)
+    return sidea*sideb*sin(anglec)/2
 
-def area_pizza_slice(radius,angle):
+
+def area_pizza_slice(radius, angle):
     """
     'triangle_area_2sides_included_angle' calculates a triangles's  area given two side lengths and included angle:
-    >>> area_pizza_slice(2,pi)
-    pi*2
+    >>> area_pizza_slice(2, pi)
+    pi**2
     :param sidea,sideb,sidec: the side lengths
     :return: the area
     """
 
-    return (radius**2*angle/2)
+    return radius**2*angle/2
 
 
 if __name__ == "__main__":
     from numpy import *
-    sampleSide, sampleAxis1, sampleAxis2, sampleAxis3, sampleDimension,sampleSidea,sampleSideb,sampleSidec,sampleAnglec = 4,1,2,3,4,3,4,5,pi/2
+    sampleSide, sampleAxis1, sampleAxis2, sampleAxis3,  \
+    sampleDimension, sampleSidea, sampleSideb, sampleSidec, sampleAnglec = 4, 1, 2, 3, 4, 3, 4, 5, pi/2
     print(" sample side:",
-          sampleSide,"\n",
+          sampleSide, "\n",
           "sample axes:",
-          sampleAxis1,sampleAxis2,sampleAxis3,"\n",
+          sampleAxis1, sampleAxis2, sampleAxis3, "\n",
           "sample dimension:",
-           sampleDimension,"\n",
+          sampleDimension, "\n",
           "equilateral triangle area:",
           equilateral_triangle_area(sampleSide),"\n",
           "cube volume:",
-          cube_volume(sampleSide),"\n",
-           "simplex (d dim) volume:",
-          simplex_d_volume(sampleSide,sampleDimension),"\n",
-           "hypercube (d dim) volume:",
-          hypercube_d_volume(sampleSide,sampleDimension),"\n",
+          cube_volume(sampleSide), "\n",
+          "simplex (d dim) volume:",
+          simplex_d_volume(sampleSide,sampleDimension), "\n",
+          "hypercube (d dim) volume:",
+          hypercube_d_volume(sampleSide,sampleDimension), "\n",
           "regular pentagon area:",
-          regular_pentagon_area(sampleSide),"\n",
+          regular_pentagon_area(sampleSide), "\n",
           "tetrahedron_volume:",
-          tetrahedron_volume(sampleSide),"\n"
+          tetrahedron_volume(sampleSide), "\n"
           " ellipsoid volume:",
-          ellipsoid_volume(sampleAxis1,sampleAxis2,sampleAxis3),"\n",
-           "triangle area (Heron):",
-          triangle_area_heron(sampleSidea,sampleSideb,sampleSidec),"\n",
-           "triangle area (2sides, 1 angle):",
-          triangle_area_2sides_included_angle(sampleSidea,sampleSideb,sampleAnglec),"\n",
-           "area of a pizza slice (given radius, angle):",
-          area_pizza_slice(sampleSidea,sampleAnglec)
-
-    )
+          ellipsoid_volume(sampleAxis1, sampleAxis2, sampleAxis3), "\n",
+          "triangle area (Heron):",
+          triangle_area_heron(sampleSidea,sampleSideb,sampleSidec), "\n",
+          "triangle area (2sides, 1 angle):",
+          triangle_area_2sides_included_angle(sampleSidea, sampleSideb, sampleAnglec),"\n",
+          "area of a pizza slice (given radius, angle):",
+          area_pizza_slice(sampleSidea, sampleAnglec))
 
 
 
