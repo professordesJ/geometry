@@ -21,17 +21,6 @@ def equilateral_triangle_area(side):
     return 3**(1/2)*side/4
 
 
-def cube_surface_area(side):
-    """
-    'cube_surface_area' calculates a cube's surface area given a side length:
-    >>> cube_area(4)
-    96
-
-    :param side: the side length
-    :return: the surface area
-    """
-    return 6*side*side
-
 
 def cube_volume(side):
     """
@@ -88,17 +77,27 @@ def tetrahedron_area(side):
     """
     return 3**(1/2)*side
 
+def ellipsoid_volume(axis1,axis2,axis3):
+    """
+    'ellipsoid_voulme' calculates an ellipsoid's surface volume given the axes:
+    >>> ellipsoid_volume(1,2,3)
+    12
+    :param axis1,axis2,axis3: the axes lengths
+    :return: the voulme
+    """
+    return 4*pi*axis1*axis2*axis3/3
+
+
 if __name__ == "__main__":
-    sampleSide = 4
+    from numpy import *
+    sampleSide, saxis1, saxis2, saxis3 = 4,1,2,3
     print(" sample side:",
           sampleSide,"\n",
           "equilateral triangle perimeter:",
           equilateral_triangle_perimeter(sampleSide),
           "  equilateral triangle area:",
           equilateral_triangle_area(sampleSide),"\n",
-          "cube surface area:",
-          cube_surface_area(sampleSide),
-          "  cube volume:",
+          "cube volume:",
           cube_volume(sampleSide),"\n",
           "regular pentagon perimeter:",
           regular_pentagon_perimeter(sampleSide),
@@ -107,7 +106,9 @@ if __name__ == "__main__":
           "tetrahedron_volume:",
           tetrahedron_volume(sampleSide),
           " tetrahedron area:",
-          tetrahedron_area(sampleSide)
+          tetrahedron_area(sampleSide),"\n",
+          "ellipsoid volume:",
+          ellipsoid_volume(saxis1,saxis2,saxis3)
     )
 
 
